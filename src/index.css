@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0F172A;
+  --color-primary-dark: #020617;
+  --color-primary-light: #2563EB;
+  --color-primary-subtle: #EFF6FF;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-light: #DBEAFE;
+  --color-cta: #FF5925;
+  --color-cta-hover: #E04310;
+  --color-cta-light: #FFECE5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, sans-serif;
+  }
+
+  /* Accessible focus rings */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Subtle gentle floating animation for mobile call button */
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 25px -5px rgba(255, 89, 37, 0.4), 0 8px 10px -6px rgba(255, 89, 37, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 20px 30px -5px rgba(255, 89, 37, 0.6), 0 10px 10px -5px rgba(255, 89, 37, 0.4);
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 3s infinite ease-in-out;
+}
+
+/* Modern clean grid pattern for subtle section texture */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+}
+
+/* Modern gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
